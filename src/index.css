@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-absent: 120 124 126;
+  --color-present: 201 180 88;
+  --color-correct: 106 170 100;
+  --key-bg: 211 214 218
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --key-bg: 129 131 132;
+    --color-absent: 58 58 60
+  }
+}
+
+.colorblind {
+  --color-present: 133 192 249;
+  --color-correct: 245 121 58
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  height: 100%;
+  padding: 0;
+  margin: 0
+}
+
+.tile:before {
+  content: "";
+  display: inline-block;
+  padding-bottom: 100%
+}
+
+.hover\:shadow-lg:hover {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0/0.1), 0 4px 6px -4px rgb(0 0 0/0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px
+}
+
+.active\:bg-correct:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--color-correct)/var(--tw-bg-opacity))
+}
+
+.dark .dark\:border-neutral-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(64 64 64/var(--tw-border-opacity))
+}
+
+.dark .dark\:bg-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 18 19/var(--tw-bg-opacity))
+}
+
+.dark .dark\:bg-neutral-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 64 64/var(--tw-bg-opacity))
+}
+
+.dark .dark\:text-neutral-100 {
+  --tw-text-opacity: 1;
+  color: rgb(245 245 245/var(--tw-text-opacity))
+}
+
+.dark .dark\:text-neutral-600 {
+  --tw-text-opacity: 1;
+  color: rgb(82 82 82/var(--tw-text-opacity))
+}
+
+.dark .checked\:dark\:bg-blue-500:checked {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246/var(--tw-bg-opacity))
+}
+
+@media (min-width:640px) {
+  .sm\:my-2 {
+    margin-top: .5rem;
+    margin-bottom: .5rem
+  }
+
+  .sm\:flex-row {
+    flex-direction: row
+  }
+
+  .sm\:gap-10 {
+    gap: 2.5rem
+  }
+
+  .sm\:border-r {
+    border-right-width: 1px
+  }
+
+  .sm\:p-2 {
+    padding: .5rem
+  }
+
+  .sm\:pr-7 {
+    padding-right: 1.75rem
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem
+  }
+}
+
+@media (min-width:768px) {
+  .md\:pb-5 {
+    padding-bottom: 1.25rem
+  }
+}
+
+@media (min-width:320px) {
+  .tiny\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem
+  }
+
+  .tiny\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem
+  }
+}
+
+.bg-key {
+  --tw-bg-opacity: 0.8;
+  background-color: rgb(var(--key-bg)/var(--tw-bg-opacity));
+}

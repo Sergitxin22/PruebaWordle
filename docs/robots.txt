@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /private/
+Disallow: /temp/
+Allow: /
+
+Sitemap: https://wordle.sergiomorales.dev/sitemap.xml

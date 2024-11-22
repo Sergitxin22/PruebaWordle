@@ -1,0 +1,31 @@
+:root {
+  --color-correct: #6aaa64;
+  --color-almost: #c9b458;
+  --color-error: #787c7e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-correct: #538d4e;
+    --color-almost: #b59f3b;
+    --color-error: #3a3a3c;
+  }
+}
+
+.almost {
+  background-color: var(--color-almost);
+  /* #b59f3b */
+}
+
+.correct {
+  background-color: var(--color-correct);
+}
+
+.error {
+  background-color: var(--color-error);
+}
+
+#disabled {
+  background-color: var(--color-error);
+  color: white;
+}

@@ -1,0 +1,37 @@
+name: Construir el proyecto y desplegar en GitHub Pages
+
+on:
+    workflow_run:
+      workflows: ["Seleccionar palabra para Wordle"]
+      types:
+        - completed
+    workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar build
+        run: npm run build
+
+      - name: Commit y Push de cambios
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/
+          git commit -m "Build actualizado"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
